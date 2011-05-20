@@ -5,23 +5,33 @@ import lejos.nxt.LCD;
 import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 
+import com.james.actions.Actions;
+import com.james.behavior.DetectSound;
+import com.james.behavior.DetectWall;
+import com.james.behavior.DriveForward;
+import com.james.hardware.Calibration;
+import com.james.hardware.Hardware;
+
 public class RoomExplorer {
     public static void main(String[] args) {
         new RoomExplorer().run();
     }
 
-    private final Arbitrator arbitrator;
-    private final Motors     motors;
+    private final Actions     actions;
+    private final Arbitrator  arbitrator;
 
-    private final Sensors    sensors;
+    private final Calibration calibration;
+    private final Hardware    hardware;
 
     public RoomExplorer() {
-        sensors = new Sensors();
-        motors = new Motors();
+        hardware = new Hardware();
 
-        Behavior b1 = new DriveForward();
-        Behavior b2 = new DetectWall(sensors, motors);
-        Behavior[] behaviorList = new Behavior[] { b1, b2 };
+        calibration = new Calibration();
+        calibration.calibrate(hardware);
+
+        actions = new Actions(calibration, hardware);
+        Behavior[] behaviorList = new Behavior[] { new DetectWall(actions, hardware), new DetectSound(hardware, calibration),
+                new DriveForward(actions, hardware) };
         arbitrator = new Arbitrator(behaviorList);
     }
 
@@ -30,7 +40,7 @@ public class RoomExplorer {
     }
 
     public void run() {
-        motors.moveForward();
+        actions.moveForward();
 
         displayMessage("Bumper Car");
         Button.waitForPress();
