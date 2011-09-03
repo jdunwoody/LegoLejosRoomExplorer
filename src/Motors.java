@@ -1,5 +1,3 @@
-package com.james.hardware;
-
 import lejos.nxt.Motor;
 
 public class Motors {

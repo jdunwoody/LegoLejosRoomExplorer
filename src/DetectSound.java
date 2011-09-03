@@ -1,9 +1,4 @@
-package com.james.behavior;
-
 import lejos.robotics.subsumption.Behavior;
-
-import com.james.hardware.Calibration;
-import com.james.hardware.Hardware;
 
 public class DetectSound implements Behavior {
 
@@ -22,10 +17,6 @@ public class DetectSound implements Behavior {
 
     }
 
-    private boolean noticableSound() {
-        return hardware.getSensors().getSound().readValue() > soundThreshold;
-    }
-
     @Override
     public void suppress() {
 
@@ -34,5 +25,9 @@ public class DetectSound implements Behavior {
     @Override
     public boolean takeControl() {
         return noticableSound();
+    }
+
+    private boolean noticableSound() {
+        return hardware.getSensors().getSound().readValue() > soundThreshold;
     }
 }

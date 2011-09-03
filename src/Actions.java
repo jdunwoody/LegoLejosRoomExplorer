@@ -1,9 +1,3 @@
-package com.james.actions;
-
-import com.james.hardware.Calibration;
-import com.james.hardware.Hardware;
-import com.james.hardware.Motors;
-
 public class Actions {
 
     private final Calibration calibration;

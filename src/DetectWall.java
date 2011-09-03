@@ -1,10 +1,5 @@
-package com.james.behavior;
-
 import lejos.nxt.Sound;
 import lejos.robotics.subsumption.Behavior;
-
-import com.james.actions.Actions;
-import com.james.hardware.Hardware;
 
 public class DetectWall implements Behavior {
     private final Actions  actions;

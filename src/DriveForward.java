@@ -1,9 +1,4 @@
-package com.james.behavior;
-
 import lejos.robotics.subsumption.Behavior;
-
-import com.james.actions.Actions;
-import com.james.hardware.Hardware;
 
 public class DriveForward implements Behavior {
 

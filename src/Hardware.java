@@ -1,5 +1,3 @@
-package com.james.hardware;
-
 public class Hardware {
     private final Display display;
     private final Motors  motors;

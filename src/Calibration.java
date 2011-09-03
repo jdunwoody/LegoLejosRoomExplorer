@@ -1,5 +1,3 @@
-package com.james.hardware;
-
 public class Calibration {
     private Hardware hardware;
 

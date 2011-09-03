@@ -10,10 +10,8 @@
 
 	<!-- deletes class files -->
 	<target name="clean" description="clean up all generated files">
-		<delete>
-			<fileset dir="${class_dir}">
-				<include name="*" />
-			</fileset>
+		<delete includeemptydirs="true">
+			<fileset dir="${class_dir}" includes="**/*" />
 		</delete>
 	</target>
 
@@ -30,7 +28,7 @@
 			<arg value="--bootclasspath" />
 			<arg path="${nxj.classes.jar}" />
 			<arg value="--classpath" />
-			<arg path="." />
+			<arg path="${class_dir}" />
 			<arg value="--writeorder" />
 			<arg value="LE" />
 			<arg value="${program}" />

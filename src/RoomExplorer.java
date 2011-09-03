@@ -1,16 +1,7 @@
-package com.james;
-
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
-
-import com.james.actions.Actions;
-import com.james.behavior.DetectSound;
-import com.james.behavior.DetectWall;
-import com.james.behavior.DriveForward;
-import com.james.hardware.Calibration;
-import com.james.hardware.Hardware;
 
 public class RoomExplorer {
     public static void main(String[] args) {
@@ -35,15 +26,15 @@ public class RoomExplorer {
         arbitrator = new Arbitrator(behaviorList);
     }
 
-    private void displayMessage(String message) {
-        LCD.drawString(message, 0, 1);
-    }
-
     public void run() {
         actions.moveForward();
 
         displayMessage("Bumper Car");
         Button.waitForPress();
         arbitrator.start();
+    }
+
+    private void displayMessage(String message) {
+        LCD.drawString(message, 0, 1);
     }
 }
