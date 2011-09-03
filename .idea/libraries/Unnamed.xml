@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Unnamed">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/nxt" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/nxt" recursive="false" />
+  </library>
+</component>

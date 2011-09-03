@@ -1,3 +1,4 @@
+package com.james;
 import lejos.robotics.subsumption.Behavior;
 
 public class DetectSound implements Behavior {

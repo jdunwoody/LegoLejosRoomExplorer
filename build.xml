@@ -10,7 +10,7 @@
 
 	<!-- deletes class files -->
 	<target name="clean" description="clean up all generated files">
-		<delete includeemptydirs="true">
+		<delete includeemptydirs="true" quiet="true">
 			<fileset dir="${class_dir}" includes="**/*" />
 		</delete>
 	</target>

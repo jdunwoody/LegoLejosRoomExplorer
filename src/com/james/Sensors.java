@@ -1,3 +1,4 @@
+package com.james;
 import lejos.nxt.SensorPort;
 import lejos.nxt.SoundSensor;
 import lejos.nxt.TouchSensor;

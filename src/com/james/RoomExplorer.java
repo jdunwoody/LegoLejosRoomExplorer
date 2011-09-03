@@ -1,3 +1,4 @@
+package com.james;
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.robotics.subsumption.Arbitrator;
