@@ -24,18 +24,20 @@
 	</target>
 
 	<target name="link" depends="compile" description="link the binary">
-		<java classname="js.tinyvm.TinyVM">
+		<java classname="lejos.pc.tools.NXJLink">
 			<arg value="--bootclasspath" />
 			<arg path="${nxj.classes.jar}" />
 			<arg value="--classpath" />
 			<arg path="${class_dir}" />
 			<arg value="--writeorder" />
 			<arg value="LE" />
-			<arg value="${program}" />
+			<arg value="com/james/${program}" />
 			<arg value="-o" />
 			<arg value="${binary}" />
 			<arg value="-v" />
 			<classpath>
+                <pathelement location="${nxj.pccomm.jar}" />
+				<pathelement location="${nxj.pctools.jar}" />
 				<pathelement location="${nxj.jtools.jar}" />
 				<pathelement location="${nxj.commons.jar}" />
 				<pathelement location="${nxj.bcel.jar}" />
@@ -48,6 +50,7 @@
 			<jvmarg value="-Djava.library.path=${nxj.library.path}" />
 			<jvmarg value="-Dnxj.home=${nxj.home}" />
 			<arg value="${binary}" />
+			<arg value="-d32" />
 			<classpath>
 				<pathelement location="${nxj.jtools.jar}" />
 				<pathelement location="${nxj.pctools.jar}" />
@@ -66,6 +69,12 @@
 			<jvmarg value="-Dnxj.home=${nxj.home}" />
 			<arg value="${binary}" />
 			<arg value="-r" />
+			<arg value="-u" />
+			<arg value="-n" />
+			<arg value="jld3" />
+			<arg value="-d" />
+			<arg value="00165308D0E7" />
+			<arg value="-d32" />
 			<classpath>
 				<pathelement location="${nxj.jtools.jar}" />
 				<pathelement location="${nxj.pctools.jar}" />
