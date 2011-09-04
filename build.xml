@@ -1,4 +1,4 @@
-<project name="LejosRoomExplorer" default="uploadandrun">
+<project name="LejosRoomExplorer" default="link">
 
 	<!-- set properties for this build -->
 	<property environment="env" />
